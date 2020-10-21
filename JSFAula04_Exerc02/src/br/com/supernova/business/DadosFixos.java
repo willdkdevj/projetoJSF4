@@ -7,9 +7,9 @@ import br.com.supernova.model.Estado;
 import br.com.supernova.model.Interesse;
 
 public class DadosFixos {
-	public static List<Estado> ESTADOS;
-	public static List<Interesse> INTERESSES;
-
+	public static final List<Estado> ESTADOS;
+	public static final List<Interesse> INTERESSES;
+	
 	static {
 		ESTADOS = new ArrayList<>();
 		ESTADOS.add(new Estado("Acre", "AC"));

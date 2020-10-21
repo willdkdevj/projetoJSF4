@@ -5,10 +5,10 @@ public class Estado {
 	private String sigla;
 
 	public Estado(){
-
+		System.out.println("Instanciando estado - construdor vazio");
 	}
 
-	public Estado(String sigla, String nome){
+	public Estado(String nome, String sigla){
 		this.sigla = sigla;
 		this.nome = nome;
 	}

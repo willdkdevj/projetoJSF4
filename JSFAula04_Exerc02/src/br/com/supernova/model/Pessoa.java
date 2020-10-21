@@ -3,17 +3,20 @@ package br.com.supernova.model;
 import java.util.Date;
 
 public class Pessoa {
+	
 	private String nome;
 	private String email;
 	private Date dataNascimento;
 	private Endereco enderecoResidencia;
 	private Telefone telefoneResidencia;
 	private Telefone telefoneCelular;
+	
 	private String nomeEmpresa;
 	private Endereco enderecoComercial;
 	private Telefone telefoneComercial;
 	private String cargo;
 	private Double salario;
+	
 	private Interesse[] interesses;
 
 	public String getNome(){
@@ -41,14 +44,23 @@ public class Pessoa {
 	}
 
 	public Endereco getEnderecoResidencia(){
+		if(enderecoResidencia==null) {
+			enderecoResidencia = new Endereco();
+			System.out.println("Retornado Endereço");
+		}
+		
 		return enderecoResidencia;
 	}
 
 	public void setEnderecoResidencia(Endereco endereco){
+		System.out.println("Instanciado Endereco");
 		this.enderecoResidencia = endereco;
 	}
 
 	public Telefone getTelefoneResidencia(){
+		if(telefoneResidencia==null) {
+			telefoneResidencia = new Telefone();
+		}
 		return telefoneResidencia;
 	}
 

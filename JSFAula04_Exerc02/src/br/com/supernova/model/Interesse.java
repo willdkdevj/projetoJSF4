@@ -4,8 +4,7 @@ public class Interesse {
 	private Integer id;
 	private String area;
 
-	public Interesse(){
-		
+	public Interesse(){		
 	}
 
 	public Interesse(Integer id, String area){

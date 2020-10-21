@@ -9,11 +9,11 @@ public class Telefone {
 		FIXO, CELULAR;
 	}
 
-	public String getDDD(){
+	public String getDdd(){
 		return ddd;
 	}
 
-	public void setDDD(String ddd){
+	public void setDdd(String ddd){
 		this.ddd = ddd;
 	}
 

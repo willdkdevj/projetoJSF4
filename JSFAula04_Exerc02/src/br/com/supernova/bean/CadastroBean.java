@@ -3,6 +3,7 @@ package br.com.supernova.bean;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
@@ -16,21 +17,27 @@ import br.com.supernova.model.Telefone;
 @Named("cadastro")
 @SessionScoped
 public class CadastroBean implements Serializable {
+	
 	private Pessoa pessoa;
 
-	public Pessoa getPessoa(){
+	@PostConstruct
+	public void init() {
+			
+		System.out.println("Instanciando Cadastro!");
 		
-		if(pessoa == null){
-			pessoa = new Pessoa();
-			pessoa.setEnderecoResidencia(new Endereco());
-			pessoa.getEnderecoResidencia().setEstados(new Estado());
-			pessoa.setTelefoneResidencia(new Telefone());
-			pessoa.setTelefoneCelular(new Telefone());
+	}
+	
+	public Pessoa getPessoa(){		
+		if(pessoa == null) {
+			pessoa = new Pessoa();			
+			pessoa.setEnderecoResidencia(new Endereco());			
+			pessoa.getEnderecoResidencia().setEstado(new Estado());
 			pessoa.setEnderecoComercial(new Endereco());
-			pessoa.getEnderecoComercial().setEstados(new Estado());
-			pessoa.setTelefoneComercial(new Telefone());
+			pessoa.getEnderecoComercial().setEstado(new Estado());
+			pessoa.setTelefoneResidencia(new Telefone());
+			pessoa.setTelefoneCelular(new Telefone());			
+			pessoa.setTelefoneComercial(new Telefone());			
 		}
-
 		return pessoa;
 	}
 
@@ -38,11 +45,13 @@ public class CadastroBean implements Serializable {
 		this.pessoa = pessoa;
 	}
 
-	public List<Estado> getListaEstados(){
+	public List<Estado> getEstados(){
+		System.out.println("Lista de Estados retornada");
 		return DadosFixos.ESTADOS;
 	}
 
-	public List<Interesse> getListaInteresses(){
+	public List<Interesse> getInteresses(){
+		System.out.println("Lista de Estados setada");
 		return DadosFixos.INTERESSES;
 	}
 }

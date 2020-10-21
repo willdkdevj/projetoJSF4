@@ -7,7 +7,7 @@ public class Endereco {
 	private String bairro;
 	private String cep;
 	private String cidade;
-	private Estado estados;
+	private Estado estado;
 
 	public String getRua(){
 		return rua;
@@ -41,11 +41,11 @@ public class Endereco {
 		this.bairro = bairro;
 	}
 
-	public String getCEP(){
+	public String getCep(){
 		return cep;
 	}
 
-	public void setCEP(String cep){
+	public void setCep(String cep){
 		this.cep = cep;
 	}
 
@@ -57,11 +57,12 @@ public class Endereco {
 		this.cidade = cidade;
 	}
 
-	public Estado getEstados(){
-		return estados;
+	public Estado getEstado(){
+		return estado;
 	}
 
-	public void setEstados(Estado estado){
-		this.estados = estado;
+	public void setEstado(Estado estado){
+		System.out.println("Instanciado Estado");
+		this.estado = estado;
 	}
 }

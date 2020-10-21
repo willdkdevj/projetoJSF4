@@ -22,24 +22,25 @@
 					Data de Nascimento: 
 					<h:outputText value="#{cadastro.pessoa.dataNascimento}" />
 					Rua: 
-					<h:outputText value="#{cadastro.pessoa.enderecoResidencial.rua}" />
+					<h:outputText value="#{cadastro.pessoa.enderecoResidencia.rua}" />
 					Número: 
-					<h:outputText value="#{cadastro.pessoa.enderecoResidencial.numero}" />
+					<h:outputText value="#{cadastro.pessoa.enderecoResidencia.numero}" />
 					Complemento: 
-					<h:outputText value="#{cadastro.pessoa.enderecoResidencial.complemento}" />
+					<h:outputText value="#{cadastro.pessoa.enderecoResidencia.complemento}" />
 					Bairro: 
-					<h:outputText value="#{cadastro.pessoa.enderecoResidencial.bairro}" />
+					<h:outputText value="#{cadastro.pessoa.enderecoResidencia.bairro}" />
 					CEP: 
-					<h:outputText value="#{cadastro.pessoa.enderecoResidencial.cep}" />
+					<h:outputText value="#{cadastro.pessoa.enderecoResidencia.cep}" />
 					Cidade: 
-					<h:outputText value="#{cadastro.pessoa.enderecoResidencial.estado.nome}" />
+					<h:outputText value="#{cadastro.pessoa.enderecoResidencia.estado.nome}" />
 					Estado: 
-					<h:outputText value="#{cadastro.pessoa.enderecoResidencial.estado.sigla}" />
+					<h:outputText value="#{cadastro.pessoa.enderecoResidencia.estado.sigla}" />
 					Telefone Residencial: 
-					<h:outputText value="(#{cadastro.pessoa.telefoneResidencial.ddd}) #{cadastro.pessoa.telefoneResidencial.numero}" />
+					<h:outputText value="(#{cadastro.pessoa.telefoneResidencia.ddd}) #{cadastro.pessoa.telefoneResidencial.numero}" />
 					Telefone Celular: 
 					<h:outputText value="(#{cadastro.pessoa.telefoneCelular.ddd}) #{cadastro.pessoa.telefoneCelular.numero}" />
 			</h:panelGrid>
+			
 			<h:panelGrid column="2">
 				<f:facet name="header">
 					Dados Comerciais Cadastrados
@@ -47,9 +48,9 @@
 				Nome da Empresa:
 				<h:outputText value="#{cadastro.pessoa.nomeEmpresa}" />
 				Cargo (Profissão):
-				<h:outputText value="#{cadastro.pessoa.nomeEmpresa}" />
+				<h:outputText value="#{cadastro.pessoa.cargo}" />
 				Salário Atual (R$):
-				<h:outputText value="#{cadastro.pessoa.nomeEmpresa}" />
+				<h:outputText value="#{cadastro.pessoa.salario}" />
 				Rua:
 				<h:outputText value="#{cadastro.pessoa.enderecoComercial.rua}" />
 				Número:
@@ -61,7 +62,7 @@
 				CEP:
 				<h:outputText value="#{cadastro.pessoa.enderecoComercial.cep}" />
 				Cidade:
-				<h:outputText value="#{cadastro.pessoa.enderecoComercial.estado.nome}" />
+				<h:outputText value="#{cadastro.pessoa.enderecoComercial.cidade}" />
 				Estado:
 				<h:outputText value="#{cadastro.pessoa.enderecoComercial.estado.sigla}" />
 				Telefone Comercial:
@@ -72,7 +73,8 @@
 					Interesses Pessoais Cadastrados
 				</f:facet>
 				<h:selectManyCheckbox value="#{cadastro.pessoa.interesses}" layout="pageDirection" readonly="true">
-					<h:selectItems itemLabel="#{cadastro.pessoa.interesses}" var="i" itemValue="#{i.id}" itemLabel="#{i.nome}" />
+					<h:selectItems value="#{cadastro.listaInteresses}"
+					 var="i" itemValue="#{i.id}" itemLabel="#{i.nome}" />
 				</h:selectManyCheckbox>
 			</h:panelGrid>
 		</h:panelGrid>
